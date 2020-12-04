@@ -6,28 +6,28 @@ import org.w3c.dom.ls.LSOutput;
  * @author gcschmit
  * @version 16nov2020
  */
-public class Conditions
-{
-    ///system.out.println("hi");
-}
+//public class Conditions
+//{
+//    ///system.out.println("hi");
+//}
 
 
-public static void extraOperatorsExample(){
-
-    int x = 7;
-    int z = 7;x
-    int y = 7;
-    x+=1;
-    y += 1;
-    z++; //increment by 1
-
-
-    int a  = 7;
-    int b = a++;
-
-    int c = 7;
-    int d = c++;
-    //c and d are 8;
-
-
-}
+//public static extraOperatorsExample(){
+//
+//    int x = 7;
+//    int z = 7;
+//    int y = 7;
+//    x+=1;
+//    y += 1;
+//    z++; //increment by 1
+//
+//
+//    int a  = 7;
+//    int b = a++;
+//
+//    int c = 7;
+//    int d = c++;
+//    //c and d are 8;
+//
+//
+//}
