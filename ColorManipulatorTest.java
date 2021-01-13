@@ -11,8 +11,8 @@ public class ColorManipulatorTest {
         ColorManipulator manipulator = new ColorManipulator( grayscalepicture );
         manipulator.grayscale();
 
-        Pixel normalpixel = picture.getPixel( 0, 0 );
-        Pixel graypixel = picture.getPixel(0,0);
+        Pixel normalpixel = picture.getPixel( 100, 100 );
+        Pixel graypixel = grayscalepicture.getPixel(100,100);
 
         int total = normalpixel.getBlue();
         total += normalpixel.getRed();

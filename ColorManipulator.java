@@ -134,6 +134,14 @@ public class ColorManipulator
             {
                 Pixel pixel = this.picture.getPixel( x, y );
 
+                int total = pixel.getBlue();
+                total += pixel.getRed();
+                total += pixel.getGreen();
+                total /= 3;
+
+                pixel.setRed(total);
+                pixel.setGreen(total);
+                pixel.setBlue(total);
             }
         }
     }
@@ -144,7 +152,7 @@ public class ColorManipulator
         Picture picture= new Picture( "Selfie 2.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
         picture.explore();
-        manipulator.maxRed();
+        manipulator.grayscale();
         picture.explore();
     }
 
