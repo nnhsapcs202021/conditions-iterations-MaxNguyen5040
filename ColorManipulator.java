@@ -146,14 +146,29 @@ public class ColorManipulator
         }
     }
 
+    /**
+     * Method for changing every pixel into a set color
+     */
+    public void posterize(int range1, int range2, int range3, int range4, Color color1, Color color2, Color color3, Color color4) {
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
+        //interate through the pixels, changing colors
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                Pixel pixel = this.picture.getPixel(x, y);
+                int value = pixel.getBlue();
+
+            }
+        }
+    }
+
     public static void main(String args[])
     {
         // the selfie image must be in the Shepard Fairey folder
-        Picture picture= new Picture( "Selfie 2.jpg" );
+        Picture picture= new Picture( "Callaghan.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
-        picture.explore();
-        manipulator.grayscale();
-        picture.explore();
+
     }
 
 

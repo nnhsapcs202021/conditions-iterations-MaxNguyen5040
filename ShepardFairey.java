@@ -26,8 +26,44 @@ public class ShepardFairey
      * Transforms the picture by applying a Shepard Fairey-inspired effect.
      *
      */
-    public void transform()
-    {
+    public void transform() {
+        manipulator.grayscale();
+
+        ///find smallest and largest greyscale values
+        int smallest;
+        int biggest;
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
+        Pixel pixel = this.picture.getPixel(0, 0);
+        smallest = pixel.getBlue();
+        biggest = pixel.getBlue();
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                Pixel pixel1 = this.picture.getPixel(x, y);
+                if(pixel1.getBlue() > biggest){
+                    biggest = pixel1.getBlue();
+
+                }
+                else if(pixel1.getBlue() < smallest){
+                    smallest = pixel1.getBlue();
+
+                }
+            }
+        }
+
+        //divide into 4 ranges
+        int range = biggest-smallest;
+        range /= 4; //how long each range is
+        int range1 = range;
+        int range2 = range*2;//ending value
+        int range3 = range*3;
+        int range4 = range*4;
+
+        manipulator.posterize(range1,range2,range3,range4,Color.green,Color.blue,Color.white,Color.cyan);
+
+
+
 
     }
 
@@ -35,7 +71,7 @@ public class ShepardFairey
     {
         // create a new picture object based on the original selfie
         //  (the selfie image must be in the Shepard Fairey folder)
-        Picture selfie = new Picture( "selfiePortrait.jpg" );
+        Picture selfie = new Picture( "Callaghan.jpg" );
 
         // create a ShepardFairey object to transform the selfie picture
         ShepardFairey fairey = new ShepardFairey( selfie );
@@ -49,23 +85,15 @@ public class ShepardFairey
         // display the transformed selfie picture
         selfie.explore();
 
-        // save the transformed selfie picture
-
-        /* This code doesn't work for some students for unknown reasons.
-         * You may need to specify an absolute path. For example:
-         *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
-         */
-        selfie.write( "MrSchmitPortrait.jpg" );
-
-        // repeat the steps for the selfie in landscape orientation
-        selfie = new Picture( "selfieLandscape.jpg" );
-        fairey = new ShepardFairey( selfie );
-        selfie.explore();
-        fairey.transform();
-        selfie.explore();
-        selfie.write( "MrCallaghanLandscape.jpg" );
-
-        // display the transformed selfie picture
-        selfie.explore();
+//        // save the transformed selfie picture
+//
+//        /* This code doesn't work for some students for unknown reasons.
+//         * You may need to specify an absolute path. For example:
+//         *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
+//         */
+//        selfie.write( "MrSchmitPortrait.jpg" );
+//
+//        // display the transformed selfie picture
+//        selfie.explore();
     }
 }
