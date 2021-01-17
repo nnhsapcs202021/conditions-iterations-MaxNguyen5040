@@ -11,10 +11,12 @@ public class ShepardFairey
     private ColorManipulator manipulator;
     private Picture picture;
 
-    private static final Color OFF_WHITE = new Color( 248, 229, 175 );
-    private static final Color LIGHT_BLUE = new Color( 121, 149, 159 );
-    private static final Color RED = new Color( 198, 50, 45 );
-    private static final Color DARK_BLUE = new Color( 16, 48, 77 );
+
+    private static final Color color1 = new Color( 0, 161, 163);
+    private static final Color color2 = new Color(30, 161, 173);
+    private static final Color color3 = new Color( 60, 161, 183);
+    private static final Color color4 = new Color( 90, 161, 205);
+
 
     public ShepardFairey( Picture newPicture )
     {
@@ -60,10 +62,7 @@ public class ShepardFairey
         int range3 = range*3;
         int range4 = range*4;
 
-        manipulator.posterize(range1,range2,range3,range4,Color.green,Color.blue,Color.white,Color.cyan);
-
-
-
+        manipulator.posterize(range1,range2,range3,range4,color1,color2,color3,color4);
 
     }
 
@@ -71,7 +70,7 @@ public class ShepardFairey
     {
         // create a new picture object based on the original selfie
         //  (the selfie image must be in the Shepard Fairey folder)
-        Picture selfie = new Picture( "Callaghan.jpg" );
+        Picture selfie = new Picture( "Selfie.jpg" );
 
         // create a ShepardFairey object to transform the selfie picture
         ShepardFairey fairey = new ShepardFairey( selfie );
@@ -85,15 +84,15 @@ public class ShepardFairey
         // display the transformed selfie picture
         selfie.explore();
 
-//        // save the transformed selfie picture
-//
-//        /* This code doesn't work for some students for unknown reasons.
-//         * You may need to specify an absolute path. For example:
-//         *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
-//         */
-//        selfie.write( "MrSchmitPortrait.jpg" );
-//
-//        // display the transformed selfie picture
-//        selfie.explore();
+        // save the transformed selfie picture
+
+        /* This code doesn't work for some students for unknown reasons.
+         * You may need to specify an absolute path. For example:
+         *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
+         */
+
+       //I wrote the final product to a seperate file so we can view the original as many times as we want. I don't know if this is the correct path.
+       selfie.write( "Users\\MaxNguyen5040\\GitHub\\conditions-iterations-MaxNguyen5040\\WriteSelfie.jpg" );
+
     }
 }

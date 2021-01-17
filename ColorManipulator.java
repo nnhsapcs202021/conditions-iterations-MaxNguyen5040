@@ -157,11 +157,32 @@ public class ColorManipulator
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 Pixel pixel = this.picture.getPixel(x, y);
-                int value = pixel.getBlue();
+                if(pixel.getBlue() <= range1){
+                    pixel.setBlue(color1.getBlue());
+                    pixel.setRed(color1.getRed());
+                    pixel.setGreen(color1.getGreen());
+                }
+                else if(pixel.getBlue() <= range2){
+                    pixel.setBlue(color2.getBlue());
+                    pixel.setRed(color2.getRed());
+                    pixel.setGreen(color2.getGreen());
+                }
+                else if(pixel.getBlue() <= range3){
+                    pixel.setBlue(color3.getBlue());
+                    pixel.setRed(color3.getRed());
+                    pixel.setGreen(color3.getGreen());
+                }
+                else{
+                    pixel.setBlue(color4.getBlue());
+                    pixel.setRed(color4.getRed());
+                    pixel.setGreen(color4.getGreen());
+                    }
+                }
+
 
             }
-        }
     }
+
 
     public static void main(String args[])
     {
