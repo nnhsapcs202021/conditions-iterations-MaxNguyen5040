@@ -91,8 +91,8 @@ public class ShepardFairey
          *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
          */
 
-       //I wrote the final product to a seperate file so we can view the original as many times as we want. I don't know if this is the correct path.
-       selfie.write( "Users\\MaxNguyen5040\\GitHub\\conditions-iterations-MaxNguyen5040\\WriteSelfie.jpg" );
+       //I wrote the final product to a seperate file so we can view the original as many times as we want.
+       selfie.write( "/Users/maxnguyen/IdeaProjects/conditions-iterations-MaxNguyen5040/WriteSelfie.jpg" );
 
     }
 }
